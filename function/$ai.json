@@ -1,0 +1,26 @@
+{
+  "tag": "$ai[Texto;(Ordens do sistema;Limite de token de resposta)]",
+  "shortDescription": "Use a IA.",
+  "arguments": [
+    {
+      "name": "Tetxo",
+      "description": "Texto para a IA, por exemplo: \"Diga algo engraçado\"",
+      "type": "String",
+      "required": true
+    },
+    {
+      "name": "Ordem do sistema",
+      "description": "Ordem do sistema para a IA, por exemplo: \"Agir engraçado\"",
+      "type": "String",
+      "required": false
+    },
+    {
+      "name": "Limite de token de resposta",
+      "description": "Limite do comprimento da resposta. `(Aproximadamente 4 caracteres equivalem a 1 token.)`",
+      "type": "Integer",
+      "required": false
+    }
+  ],
+  "intents": 0,
+  "premium": true
+}
