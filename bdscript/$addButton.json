@@ -1,0 +1,55 @@
+{
+  "tag": "$addButton[Nova linha?;ID/URL da Interação;Legenda;Estilo;(Desativar?;Emoji;ID da Mensagem)]",
+  "shortDescription": "Adiciona um botão a uma mensagem.",
+  "arguments": [
+    {
+      "name": "Nova linha",
+      "type": "Bool",
+      "required": true
+    },
+    {
+      "name": "ID/URL da Interação",
+      "type": "URL | String",
+      "required": true
+    },
+    {
+      "name": "Legenda",
+      "type": "String",
+      "required": true,
+      "empty": true
+    },
+    {
+      "name": "Estilo",
+      "description": "Verifique o Wiki para obter detalhes.",
+      "type": "Enum",
+      "required": true,
+      "enumData": [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "link"
+      ]
+    },
+    {
+      "name": "Desativar",
+      "type": "Bool",
+      "required": false,
+      "empty": true
+    },
+    {
+      "name": "Emoji",
+      "type": "Emoji",
+      "required": false,
+      "empty": true
+    },
+    {
+      "name": "ID da Mensagem",
+      "type": "Snowflake",
+      "required": false,
+      "empty": true
+    }
+  ],
+  "intents": 0,
+  "premium": false
+}
