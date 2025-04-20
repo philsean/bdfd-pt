@@ -1,6 +1,7 @@
 {
   "tag": "$addField[Nome;Texto;(Alinhado;Índice)]",
-  "shortDescription": "Adds field to embed. The third arguments sets if the field may be inline",
+  "shortDescription": "Adiciona um campo a embed.",
+  "longDescription": "",
   "arguments": [
     {
       "name": "Nome",
