@@ -50,6 +50,12 @@
       "empty": true
     }
   ],
+  "examples": [
+    {
+      "code": "$nomention\nOlá Mundo!\n$addButton[no;teste;Fale Olá!;primary;no;👋🏼]",
+      "image": "https://i.imgur.com/eQvLdCu.jpeg"
+    }
+  ],
   "intents": 0,
   "premium": false
 }
