@@ -26,8 +26,13 @@
   "examples": [
     {
       "title": "Sem alinhamento",
-      "code": "$nomention\n$addField[Campo 1!;Valor 1!]\n$addField[Campo 2!;Valor 2!]\n$addField[Campo 3!;Valor 3!]",
+      "code": "$nomention\n$addField[Campo 1!;Texto 1!]\n$addField[Campo 2!;Texto 2!]\n$addField[Campo 3!;Texto 3!]",
       "image": "https://i.imgur.com/qLsDMk1.jpeg"
+    },
+    {
+      "title": "Com Alinhamento",
+      "code": "$nomention\n$addField[Campo 1!;Texto 1!;yes]\n$addField[Campo 2!;Texto 2!;yes]\n$addField[Campo 3!;Texto 3!;yes]",
+      "image": "https://i.imgur.com/ARiBFaQ.jpeg"
     }
   ],
   "intents": 0,
