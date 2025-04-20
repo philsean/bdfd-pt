@@ -1,0 +1,14 @@
+{
+  "arguments": [
+    {
+      "empty": true,
+      "name": "Código BDScript",
+      "required": true,
+      "type": "String"
+    }
+  ],
+  "intents": 0,
+  "premium": false,
+  "shortDescription": "Este comando só pode ser usado em BDScript 2 e deve ser utilizado com cautela! Execute funções BDScript diretamente pelo código.",
+  "tag": "$eval[Código BDScript]"
+}
