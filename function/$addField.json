@@ -1,7 +1,7 @@
 {
   "tag": "$addField[Nome;Texto;(Alinhado;Índice)]",
   "shortDescription": "Adiciona um campo a embed.",
-  "longDescription": "",
+  "longDescription": "Esta função faz com que adicione um campo de texto a embed, podendo ser colocado alinhadamente ou não.\n- Você pode adicionar até 25 campos por embed.\n- Os campos alinhados podem não aparecer alinhados em alguns dispositivos móveis.",
   "arguments": [
     {
       "name": "Nome",
