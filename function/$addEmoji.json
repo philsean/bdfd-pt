@@ -25,7 +25,7 @@
       "image": "https://i.imgur.com/asOwXqS.jpeg"
     }, {
       "title": "Com Anexo",
-      "code": "$nomention\n$suppressErrors[Forneça todos os argumentos necessários! Uso: `!adicionar-emoji (Nome) [Anexe a Imagem\\]`]\nNovo emoji adicionado: $addEmoji[$message[1];$getAttachments[0];yes]",
+      "code": "$nomention\n$suppressErrors[Forneça todos os argumentos necessários! Uso: `!adicionar-emoji (Nome) <Anexe a Imagem>`]\nNovo emoji adicionado: $addEmoji[$message[1];$getAttachments[0];yes]",
       "image": "https://i.imgur.com/pbRAUMi.jpeg"
     }
   ],
