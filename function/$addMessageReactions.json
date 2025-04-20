@@ -1,0 +1,24 @@
+{
+  "arguments": [
+    {
+      "name": "ID do Canal",
+      "required": true,
+      "type": "Snowflake"
+    },
+    {
+      "name": "ID da Mensagem",
+      "required": true,
+      "type": "Snowflake"
+    },
+    {
+      "name": "Emoji",
+      "repeatable": true,
+      "required": true,
+      "type": "Emoji"
+    }
+  ],
+  "intents": 0,
+  "premium": false,
+  "shortDescription": "Permite adicionar reações a uma mensagem específica",
+  "tag": "$addMessageReactions[ID do Canal;ID da Mensagem;Emoji;...]"
+}
