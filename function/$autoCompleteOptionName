@@ -1,0 +1,7 @@
+{
+  "arguments": null,
+  "intents": 0,
+  "premium": false,
+  "shortDescription": "Só pode ser usado na interação de $onAutoComplete, retornando o nome da opção digitada",
+  "tag": "$autoCompleteOptionName"
+}
