@@ -23,6 +23,10 @@
       "title": "Com Link",
       "code": "$nomention\n$argsCheck[>2;Forneça todos os argumentos necessários! Uso: `!adicionar-emoji (URL) (Nome)`]\nNovo emoji adicionado: $addEmoji[$message[2];$message[1];yes]",
       "image": "https://i.imgur.com/asOwXqS.jpeg"
+    }, {
+      "title": "Com Anexo",
+      "code": "$nomention\n$suppressErrors[Forneça todos os argumentos necessários! Uso: `!adicionar-emoji (Nome) [Anexe a Imagem\]`]\nNovo emoji adicionado: $addEmoji[$message[1];$getAttachments[0];yes]",
+      "image": "https://i.imgur.com/pbRAUMi.jpeg"
     }
   ],
   "intents": 0,
