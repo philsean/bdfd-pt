@@ -1,0 +1,7 @@
+{
+  "arguments": null,
+  "intents": 0,
+  "premium": false,
+  "shortDescription": "Desabilita o inconveniente de executar mais de um comando caso eles tenham nomes semelhantes, por exemplo: !ban e !banner",
+  "tag": "$alternativeParsing"
+}
