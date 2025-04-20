@@ -1,0 +1,15 @@
+{
+  "tag": "$addCmdReactions[Emoji;...]",
+  "shortDescription": "Reaje à mensagem do usuário.",
+  "arguments": [
+    {
+      "name": "Emoji",
+      "description": "Emoji normal ou ID de emoji personalizado",
+      "type": "Emoji",
+      "required": true,
+      "repeatable": true
+    }
+  ],
+  "intents": 0,
+  "premium": false
+}
