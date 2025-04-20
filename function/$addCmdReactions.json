@@ -10,6 +10,12 @@
       "repeatable": true
     }
   ],
+  "examples": [
+    {
+      "code": "$nomention\n$addCmdReactions[🧡]",
+      "image": "https://i.imgur.com/zkCocyh.jpeg"
+    }
+  ],
   "intents": 0,
   "premium": false
 }
