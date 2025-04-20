@@ -1,6 +1,6 @@
 {
   "tag": "$addEmoji[Nome;URL;Retornar emoji]",
-  "shortDescription": "Adiciona emoji ao servidor e, se <return> estiver definido como 'yes', o emoji recém-adicionado será retornado.",
+  "shortDescription": "Adiciona emoji ao servidor e, se <retornar> estiver definido como 'yes', o emoji recém-adicionado será retornado.",
   "arguments": [
     {
       "name": "Nome",
