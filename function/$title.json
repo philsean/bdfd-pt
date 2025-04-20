@@ -1,0 +1,19 @@
+{
+  "arguments": [
+    {
+      "empty": true,
+      "name": "Título",
+      "required": true,
+      "type": "String"
+    },
+    {
+      "name": "Índice",
+      "required": false,
+      "type": "Integer"
+    }
+  ],
+  "intents": 0,
+  "premium": false,
+  "shortDescription": "Adiciona título a um embed.",
+  "tag": "$title[Título;(Índice)]"
+}
