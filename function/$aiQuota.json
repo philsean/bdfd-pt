@@ -1,0 +1,7 @@
+{
+  "arguments": null,
+  "intents": 0,
+  "premium": true,
+  "shortDescription": "Ver a quantidade de cota restante da IA disponível no bot",
+  "tag": "$aiQuota"
+}
