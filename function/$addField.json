@@ -1,7 +1,6 @@
 {
   "tag": "$addField[Nome;Texto;(Alinhado;Índice)]",
-  "shortDescription": "Adiciona campo a embed.",
-  "longDescription": "Esta função faz com que adicione um campo de texto a embed, podendo ser colocado alinhadamente ou não.\n- Você pode adicionar até 25 campos por embed.\n- Os campos alinhados podem não aparecer alinhados em alguns dispositivos móveis.",
+  "shortDescription": "Adds field to embed. The third arguments sets if the field may be inline",
   "arguments": [
     {
       "name": "Nome",
@@ -22,6 +21,13 @@
       "name": "Índice",
       "type": "Integer",
       "required": false
+    }
+  ],
+  "examples": [
+    {
+      "title": "Sem alinhamento",
+      "code": "$nomention\n$addField[Campo 1!;Valor 1!]\n$addField[Campo 2!;Valor 2!]\n$addField[Campo 3!;Valor 3!]",
+      "image": "https://i.imgur.com/qLsDMk1.jpeg"
     }
   ],
   "intents": 0,
