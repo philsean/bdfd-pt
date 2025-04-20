@@ -1,0 +1,24 @@
+{
+  "tag": "$addEmoji[Nome;URL;Retornar emoji]",
+  "shortDescription": "Adiciona emoji ao servidor e, se \u003Creturn\u003E estiver definido como 'yes', o emoji recém-adicionado será retornado.",
+  "arguments": [
+    {
+      "name": "Nome",
+      "type": "String",
+      "required": true
+    },
+    {
+      "name": "URL",
+      "type": "URL",
+      "required": true
+    },
+    {
+      "name": "Retornar emoji",
+      "type": "Bool",
+      "required": true
+    }
+  ],
+  "intents": 0,
+  "premium": false,
+  "color": 0
+}
