@@ -3,7 +3,7 @@
   "shortDescription": "Use a IA.",
   "arguments": [
     {
-      "name": "Tetxo",
+      "name": "Texto",
       "description": "Texto para a IA, por exemplo: \"Diga algo engraçado\"",
       "type": "String",
       "required": true
