@@ -1,0 +1,28 @@
+{
+  "tag": "$addField[Nome;Texto;(Alinhado;Índice)]",
+  "shortDescription": "Adds field to embed. The third arguments sets if the field may be inline",
+  "arguments": [
+    {
+      "name": "Nome",
+      "type": "String",
+      "required": true
+    },
+    {
+      "name": "Texto",
+      "type": "String",
+      "required": true
+    },
+    {
+      "name": "Alinhado",
+      "type": "Bool",
+      "required": false
+    },
+    {
+      "name": "Índice",
+      "type": "Integer",
+      "required": false
+    }
+  ],
+  "intents": 0,
+  "premium": false
+}
