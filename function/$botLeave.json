@@ -1,0 +1,13 @@
+{
+  "arguments": [
+    {
+      "name": "ID do servidor",
+      "required": false,
+      "type": "Snowflake"
+    }
+  ],
+  "intents": 0,
+  "premium": false,
+  "shortDescription": "Faça o bot sair do servidor de uma forma forçada",
+  "tag": "$botLeave[ID do servidor]"
+}
