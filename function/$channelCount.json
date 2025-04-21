@@ -1,0 +1,7 @@
+{
+  "arguments": null,
+  "intents": 0,
+  "premium": false,
+  "shortDescription": "Retorna a quantidade de canais que o servidor atual possui. (Apenas os públicos que o bot tem acesso)",
+  "tag": "$channelCount"
+}
