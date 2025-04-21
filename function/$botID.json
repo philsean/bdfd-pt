@@ -1,0 +1,7 @@
+{
+  "arguments": null,
+  "intents": 0,
+  "premium": false,
+  "shortDescription": "Retorna o ID do bot.",
+  "tag": "$botID"
+}
