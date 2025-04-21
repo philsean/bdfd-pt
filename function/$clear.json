@@ -1,0 +1,25 @@
+{
+  "arguments": [
+    {
+      "name": "Quantidade",
+      "required": true,
+      "type": "Integer"
+    },
+    {
+      "empty": true,
+      "name": "ID do usuário",
+      "required": false,
+      "type": "Snowflake"
+    },
+    {
+      "description": "Por padrão ativo.",
+      "name": "Remover fixados",
+      "required": false,
+      "type": "Bool"
+    }
+  ],
+  "intents": 0,
+  "premium": false,
+  "shortDescription": "Exclua as mensagens do canal, podendo ser globais ou de um usuário específico, com um limite de exclusão de 21 dias.",
+  "tag": "$clear[Quantidade;(ID do usuário;Remover fixados)]"
+}
