@@ -1,0 +1,13 @@
+{
+  "arguments": [
+    {
+      "name": "ID do usuário",
+      "required": false,
+      "type": "Snowflake"
+    }
+  ],
+  "intents": 0,
+  "premium": false,
+  "shortDescription": "Retorna o ID do usuário",
+  "tag": "$username[ID do usuário]"
+}
