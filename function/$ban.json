@@ -1,0 +1,14 @@
+{
+  "arguments": [
+    {
+      "empty": true,
+      "name": "Motivo",
+      "required": true,
+      "type": "String"
+    }
+  ],
+  "intents": 0,
+  "premium": false,
+  "shortDescription": "Banir o usuário com motivo",
+  "tag": "$ban[Motivo]"
+}
