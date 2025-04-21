@@ -1,0 +1,14 @@
+{
+  "arguments": [
+    {
+      "empty": true,
+      "name": "Anotação",
+      "required": true,
+      "type": "String"
+    }
+  ],
+  "intents": 0,
+  "premium": false,
+  "shortDescription": "Usado para adicionar anotações no código, sendo invisível na execução de código",
+  "tag": "$c[Anotação]"
+}
