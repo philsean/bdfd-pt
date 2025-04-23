@@ -1,0 +1,7 @@
+{
+  "arguments": null,
+  "intents": 0,
+  "premium": false,
+  "shortDescription": "Retorna o atraso em milissegundos do Node atual.",
+  "tag": "$ping"
+}
