@@ -1,0 +1,14 @@
+{
+  "arguments": [
+    {
+      "name": "Chave",
+      "repeatable": true,
+      "required": true,
+      "type": "String"
+    }
+  ],
+  "intents": 0,
+  "premium": false,
+  "shortDescription": "Obtém um valor JSON a partir de uma chave específica.\nRetorna uma string vazia se o valor for nulo, se a chave não existir, se nenhuma função JSON tiver sido executada ou se $jsonClear tiver sido utilizado.",
+  "tag": "$json[Chave;...]"
+}
