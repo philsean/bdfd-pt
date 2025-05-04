@@ -8,6 +8,7 @@
   ],
   "intents": 0,
   "premium": false,
-  "shortDescription": "Retorna o ID do usuário",
+  "safe": true,
+  "shortDescription": "Retorna o ID do usuário.",
   "tag": "$username[ID do usuário]"
 }
