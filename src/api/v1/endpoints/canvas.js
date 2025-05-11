@@ -7,7 +7,7 @@ const shapeHandlers = {
     handler: (ctx, parts) => {
       const { color, x, y, width, height } = parts
       ctx.fillStyle = color
-      ctx.fillRect(parseInt(x), parseInt(y), parseInt(w), parseInt(h))
+      ctx.fillRect(parseInt(x), parseInt(y), parseInt(width), parseInt(height))
       // console.log(parts);
     }
   },
