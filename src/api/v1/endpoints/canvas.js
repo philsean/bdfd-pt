@@ -65,7 +65,7 @@ module.exports = {
       const ctx = canvas.getContext('2d')
 
       let resol = Object.entries(json); 
-      resol.map(([func, value]) => shapeHandlers[func] ? shapeHandlers[func](ctx, value) : func)
+      resol.map(([func, value]) => shapeHandlers[func] ? shapeHandlers[func].handler(ctx, value) : func)
 
       const buffer = canvas.toBuffer('image/png')
       res.set('Content-Type', 'image/png')
