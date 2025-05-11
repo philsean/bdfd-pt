@@ -5,7 +5,7 @@ const shapeHandlers = {
   rect: {
     params: 5,
     handler: (ctx, parts) => {
-      const [color, x, y, w, h] = parts
+      const { color, x, y, width, height } = parts
       ctx.fillStyle = color
       ctx.fillRect(parseInt(x), parseInt(y), parseInt(w), parseInt(h))
       // console.log(parts);
@@ -15,7 +15,7 @@ const shapeHandlers = {
   circle: {
     params: 4,
     handler: (ctx, parts) => {
-      const [color, x, y, radius] = parts
+      const { color, x, y, radius } = parts
       ctx.beginPath()
       ctx.arc(parseInt(x), parseInt(y), parseInt(radius), 0, Math.PI * 2)
       ctx.fillStyle = color
@@ -26,7 +26,7 @@ const shapeHandlers = {
   text: { 
     params: 6,
     handler: (ctx, parts) => {
-      const [color, x, y, size, font, content] = parts
+      const { color, x, y, size, font, content } = parts
       ctx.font = `${parseInt(size)}px ${font}`
       ctx.fillStyle = color
       ctx.fillText(decodeURIComponent(content), parseInt(x), parseInt(y))
@@ -36,7 +36,7 @@ const shapeHandlers = {
   line: {
     params: 6,
     handler: (ctx, parts) => {
-      const [color, x1, y1, x2, y2, width] = parts
+      const { color, x1, y1, x2, y2, width } = parts
       ctx.beginPath()
       ctx.moveTo(parseInt(x1), parseInt(y1))
       ctx.lineTo(parseInt(x2), parseInt(y2))
@@ -52,8 +52,10 @@ module.exports = {
   route: '/canvas',
   run: async (req, res) => {
     try {
-      const width = parseInt(req.query.width)
-      const height = parseInt(req.query.height)
+      let json = JSON.parse(req.query.json) || req.body;
+      
+      const width = parseInt(json.width)
+      const height = parseInt(json.height)
       
       if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) {
         return res.status(400).json({ error: 'Dimensões inválidas' })
@@ -62,17 +64,8 @@ module.exports = {
       const canvas = createCanvas(width, height)
       const ctx = canvas.getContext('2d')
 
-      for (const command of Object.keys(req.query)) {
-        if (shapeHandlers[command]) {
-          const parts = req.query[command].split(',');
-          // console.log(req.query, '\n', req.query[command]);
-            /*if (parts.length < shapeHandlers[command].params) {
-              return res.status(400).json({ error: `Parâmetros insuficientes para ${command}` });
-            }*/
-          shapeHandlers[command].handler(ctx, parts)
-          // console.log(command, '\n', parts);
-        }
-      }
+      let resol = Object.entries(body); 
+      resol.map(([func, value]) => f[func] ? f[func](ctx, value)) : func)
 
       const buffer = canvas.toBuffer('image/png')
       res.set('Content-Type', 'image/png')
@@ -84,12 +77,3 @@ module.exports = {
   }
 }
 
-async function loadImg (ctx, params) {
-  const [url, x, y, w, h] = params;
-  
-  const resp = await axios(url);
-  const img = new Image();
-  img.src = Buffer.from(resp.data);
-  
-  ctx.drawImage(img, parseInt(x || 0), parseInt(y || 0), parseInt(w || img.width || ctx.canvas?.width || 300), parseInt(h || img.height ||ctx.canvas.height || 300))
-}
