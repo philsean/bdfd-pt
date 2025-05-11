@@ -52,7 +52,7 @@ module.exports = {
   route: '/canvas',
   run: async (req, res) => {
     try {
-      let json = JSON.parse(decodeURIComponent(req.query.json)) || req.body;
+      let json = JSON.parse(decodeURIComponent(req.query.json) || req.header.json);
       
       const width = parseInt(json.width)
       const height = parseInt(json.height)
@@ -64,7 +64,7 @@ module.exports = {
       const canvas = createCanvas(width, height)
       const ctx = canvas.getContext('2d')
 
-      let resol = Object.entries(body); 
+      let resol = Object.entries(json); 
       resol.map(([func, value]) => f[func] ? f[func](ctx, value) : func)
 
       const buffer = canvas.toBuffer('image/png')
