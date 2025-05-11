@@ -77,3 +77,12 @@ module.exports = {
   }
 }
 
+async function loadImg (ctx, params) {
+  const [url, x, y, w, h] = params;
+  
+  const resp = await axios(url);
+  const img = new Image();
+  img.src = Buffer.from(resp.data);
+  
+  ctx.drawImage(img, parseInt(x || 0), parseInt(y || 0), parseInt(w || img.width || ctx.canvas?.width || 300), parseInt(h || img.height ||ctx.canvas.height || 300))
+}
