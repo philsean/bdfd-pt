@@ -72,7 +72,8 @@ module.exports = {
       res.end(buffer)
       
     } catch (err) {
-      res.json({ erro: 'Houve um erro ao tentar gerar a imagem.', err }).status(500);
+      console.log(err)
+      res.json({ erro: 'Houve um erro ao tentar gerar a imagem.', err: err.message }).status(500);
     }
   }
 }
