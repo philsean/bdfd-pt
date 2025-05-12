@@ -73,11 +73,11 @@ module.exports = {
 
       const buffer = canvas.toBuffer('image/png');
       let r = (Math.random() + 1).toString(36).substring(7); 
-      app.get(`/cdn/${r}.png`, (rq, rs) => {
+      app.use(`/cdn/${r}`, (rq, rs) => {
         rs.set('Content-Type', 'image/png')
         rs.end(buffer)
       });
-      res.json({ imagem: `https://bdfd-pt.vercel.app/cdn/${r}.png` }).status(200);
+      res.json({ imagem: `https://bdfd-pt.vercel.app/cdn/${r}` }).status(200);
     } catch (err) {
       console.log(err)
       res.json({ erro: 'Houve um erro ao tentar gerar a imagem.', err: err.message }).status(500);
