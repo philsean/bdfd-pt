@@ -74,7 +74,7 @@ module.exports = {
       const ctx = canvas.getContext('2d')
 
       let resol = Object.entries(json); 
-      let notExist = resol.map(([func, value]) => shapeHandlers[func.replaceAll('~', '')] ? shapeHandlers[func.replaceAll('~', '')].handler(ctx, value) : func)
+      let notExist = resol.map(([func, value]) => shapeHandlers[func.replaceAll('~', '')] ? shapeHandlers[func.replaceAll('~', '')].handler(ctx, value) : func).filter(x => x)
 
       const buffer = canvas.toBuffer('image/png');
       let r = (Math.random() + 1).toString(36).substring(7); 
