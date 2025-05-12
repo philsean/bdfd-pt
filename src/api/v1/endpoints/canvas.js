@@ -48,7 +48,12 @@ const shapeHandlers = {
       ctx.stroke()
     }
   },
-  image: { params: 1, handler: loadImg }
+  image: { params: 1, handler: async (ctx, parts) => {
+    const { url, x, y, width, height } = parts
+    const img = await loadImage(url)
+    ctx.drawImage(img, parseInt(x || 0), parseInt(y || 0), parseInt(width || img.width), parseInt(height || img.height))
+    }
+  }
 }
 
 module.exports = {
@@ -69,7 +74,7 @@ module.exports = {
       const ctx = canvas.getContext('2d')
 
       let resol = Object.entries(json); 
-      resol.map(([func, value]) => shapeHandlers[func.replaceAll('~', '')] ? shapeHandlers[func.replaceAll('~', '')].handler(ctx, value) : func)
+      let notExist = resol.map(([func, value]) => shapeHandlers[func.replaceAll('~', '')] ? shapeHandlers[func.replaceAll('~', '')].handler(ctx, value) : func)
 
       const buffer = canvas.toBuffer('image/png');
       let r = (Math.random() + 1).toString(36).substring(7); 
@@ -77,7 +82,7 @@ module.exports = {
         rs.set('Content-Type', 'image/png')
         rs.end(buffer)
       });
-      res.json({ imagem: `https://bdfd-pt.vercel.app/api/v1/cdn/${r}` }).status(200);
+      res.json({ imagem: `https://bdfd-pt.vercel.app/api/v1/cdn/${r}`, notExist }).status(200);
     } catch (err) {
       console.log(err)
       res.json({ erro: 'Houve um erro ao tentar gerar a imagem.', err: err.message }).status(500);
