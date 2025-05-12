@@ -24,7 +24,7 @@ function point (p) {
     if (query.length > 0) return res.status(400).json({ error: `(400 - Bad Request) › Não foi possível localizar nas 'query': ${query.map(x => x.name).join(', ')}` });
     if (headers.length > 0) return res.status(400).json({ error: `(400 - Bad Request) › Não foi possível localizar nas 'headers': ${headers.map(x => x.name).join(', ')}` });
     if (body.length > 0) return res.status(400).json({ error: `(400 - Bad Request) › Não foi possível localizar no 'body': ${body.map(x => x.name).join(', ')}` });
-    p.run(req, res, app);
+    p.run(req, res, router);
   });
 }
 
