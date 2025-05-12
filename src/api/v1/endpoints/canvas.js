@@ -31,7 +31,7 @@ const shapeHandlers = {
       ctx.font = `${parseInt(size)}px ${font}`
       console.log(ctx.font)
       ctx.fillStyle = color
-      ctx.fillText(decodeURIComponent(content), parseInt(x), parseInt(y))
+      ctx.fillText(content, parseInt(x), parseInt(y))
     }
   },
 
