@@ -52,7 +52,7 @@ const shapeHandlers = {
     const { url, x, y, width, height } = parts
     const response = await axios.get(decodeURIComponent(url), { responseType: 'arraybuffer' })
     const img = await loadImage(Buffer.from(response.data))
-    
+    console.log(img)
     ctx.drawImage(img, parseInt(x || 0), parseInt(y || 0), parseInt(width || img.width), parseInt(height || img.height))
     }
   }
