@@ -49,7 +49,7 @@ const shapeHandlers = {
     }
   },
   image: { params: 1, handler: async (ctx, parts) => {
-    const [ url, x, y, width, height ] = parts
+    const { url, x, y, width, height } = parts
     const response = await axios.get(decodeURIComponent(url), { responseType: 'arraybuffer' })
     const img = await loadImage(Buffer.from(response.data))
     
