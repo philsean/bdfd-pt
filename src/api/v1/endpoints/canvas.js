@@ -55,7 +55,7 @@ module.exports = {
   method: 'post',
   run: async (req, res, app) => {
     try {
-      let json = JSON.parse(decodeURIComponent(req.query.json) || req.body);
+      let json = req.body;
       
       const width = parseInt(json.width)
       const height = parseInt(json.height)
