@@ -84,5 +84,5 @@ async function loadImg (ctx, params) {
   const { url, x, y, width, height } = params;
   
   const img = await loadImage(url);
-  ctx.drawImage(img, parseInt(x || 0), parseInt(y || 0), parseInt(w || img.width || ctx.canvas?.width || 300), parseInt(h || img.height ||ctx.canvas.height || 300))
+  ctx.drawImage(img, parseInt(x || 0), parseInt(y || 0), parseInt(width || img.width || ctx.canvas?.width || 300), parseInt(height || img.height || ctx.canvas?.height || 300))
 }
