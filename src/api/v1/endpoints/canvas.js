@@ -5,7 +5,7 @@ const { createCanvas, loadImage } = require('@napi-rs/canvas'),
 const shapeHandlers = {
   rect: {
     params: 5,
-    handler: (ctx, parts) => {
+    handler: async (ctx, parts) => {
       const { color, x, y, width, height } = parts
       ctx.fillStyle = color
       ctx.fillRect(parseInt(x), parseInt(y), parseInt(width), parseInt(height))
@@ -80,6 +80,7 @@ module.exports = {
       let notExist = resol.map(async ([func, value]) => {
         if (!shapeHandlers[func.replaceAll('~', '')]) return ({ [func]: value });
         await shapeHandlers[func.replaceAll('~', '')].handler(ctx, value);
+        return null;
       }).filter(x => x)
 
       const buffer = canvas.toBuffer('image/png');
