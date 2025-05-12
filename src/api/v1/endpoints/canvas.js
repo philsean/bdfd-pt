@@ -1,5 +1,6 @@
 const { createCanvas, loadImage } = require('@napi-rs/canvas'),
-      axios  = require('axios');
+      axios                       = require('axios'),
+      app                         = require('../../../../index.js');
 
 const shapeHandlers = {
   rect: {
@@ -53,7 +54,7 @@ const shapeHandlers = {
 module.exports = {
   route: '/canvas',
   method: 'post',
-  run: async (req, res, app) => {
+  run: async (req, res) => {
     try {
       let json = req.body;
       
