@@ -1,4 +1,4 @@
-const { createCanvas, loadImage, Image } = require('@napi-rs/canvas'),
+const { createCanvas, loadImage } = require('@napi-rs/canvas'),
       axios  = require('axios');
 
 const shapeHandlers = {
@@ -81,11 +81,8 @@ module.exports = {
 }
 
 async function loadImg (ctx, params) {
-  const [url, x, y, w, h] = params;
+  const { url, x, y, width, height } = params;
   
-  const resp = await axios(url);
-  const img = new Image();
-  img.src = Buffer.from(resp.data);
-  
+  const img = await loadImage(url);
   ctx.drawImage(img, parseInt(x || 0), parseInt(y || 0), parseInt(w || img.width || ctx.canvas?.width || 300), parseInt(h || img.height ||ctx.canvas.height || 300))
 }
