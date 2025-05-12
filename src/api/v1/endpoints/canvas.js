@@ -1,6 +1,6 @@
 const { createCanvas, loadImage } = require('@napi-rs/canvas'),
       axios                       = require('axios'),
-      app                         = require('../../../../index.js');
+      app                         = require('express')();
 
 const shapeHandlers = {
   rect: {
