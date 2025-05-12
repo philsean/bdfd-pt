@@ -27,7 +27,9 @@ const shapeHandlers = {
     params: 6,
     handler: (ctx, parts) => {
       const { color, x, y, size, font, content } = parts
+      console.log(parts)
       ctx.font = `${parseInt(size)}px ${font}`
+      console.log(ctx.font)
       ctx.fillStyle = color
       ctx.fillText(decodeURIComponent(content), parseInt(x), parseInt(y))
     }
