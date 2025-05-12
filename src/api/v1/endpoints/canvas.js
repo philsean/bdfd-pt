@@ -1,6 +1,6 @@
 const { createCanvas, loadImage } = require('@napi-rs/canvas'),
-      axios                       = require('axios'),
-      app                         = require('express')();
+      axios                       = require('axios');
+//    app                         = require('express')();
 
 const shapeHandlers = {
   rect: {
@@ -54,7 +54,7 @@ const shapeHandlers = {
 module.exports = {
   route: '/canvas',
   method: 'post',
-  run: async (req, res) => {
+  run: async (req, res, app) => {
     try {
       let json = req.body;
       
@@ -73,7 +73,7 @@ module.exports = {
 
       const buffer = canvas.toBuffer('image/png');
       let r = (Math.random() + 1).toString(36).substring(7); 
-      app.use(`/cdn/${r}`, (rq, rs) => {
+      app.get(`/cdn/${r}`, (rq, rs) => {
         rs.set('Content-Type', 'image/png')
         rs.end(buffer)
       });
