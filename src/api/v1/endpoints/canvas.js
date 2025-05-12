@@ -52,9 +52,10 @@ const shapeHandlers = {
 
 module.exports = {
   route: '/canvas',
-  run: async (req, res) => {
+  method: 'post',
+  run: async (req, res, app) => {
     try {
-      let json = JSON.parse(decodeURIComponent(req.query.json) || req.header.json);
+      let json = JSON.parse(decodeURIComponent(req.query.json) || req.body);
       
       const width = parseInt(json.width)
       const height = parseInt(json.height)
@@ -69,10 +70,13 @@ module.exports = {
       let resol = Object.entries(json); 
       resol.map(([func, value]) => shapeHandlers[func.replaceAll('~', '')] ? shapeHandlers[func.replaceAll('~', '')].handler(ctx, value) : func)
 
-      const buffer = canvas.toBuffer('image/png')
-      res.set('Content-Type', 'image/png')
-      res.end(buffer)
-      
+      const buffer = canvas.toBuffer('image/png');
+      let r = (Math.random() + 1).toString(36).substring(7); 
+      app.get(`/cdn/${r}.png`, (rq, rs) => {
+        rs.set('Content-Type', 'image/png')
+        rs.end(buffer)
+      });
+      res.json({ imagem: `https://bdfd-pt.vercel.app/cdn/${r}.png` }).status(200);
     } catch (err) {
       console.log(err)
       res.json({ erro: 'Houve um erro ao tentar gerar a imagem.', err: err.message }).status(500);
