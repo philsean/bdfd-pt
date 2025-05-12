@@ -78,7 +78,7 @@ module.exports = {
 
       let resol = Object.entries(json); 
       let notExist = resol.map(async ([func, value]) => {
-        if (shapeHandlers[func.replaceAll('~', '')]) return ({ [func]: value } );
+        if (!shapeHandlers[func.replaceAll('~', '')]) return ({ [func]: value });
         await shapeHandlers[func.replaceAll('~', '')].handler(ctx, value);
       }).filter(x => x)
 
