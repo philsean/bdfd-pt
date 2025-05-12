@@ -1,4 +1,5 @@
 const { createCanvas, loadImage } = require('@napi-rs/canvas'),
+      { request }                 = require('undici'),
       axios                       = require('axios');
 //    app                         = require('express')();
 
@@ -50,7 +51,9 @@ const shapeHandlers = {
   },
   image: { params: 1, handler: async (ctx, parts) => {
     const { url, x, y, width, height } = parts
-    const img = await loadImage(url)
+    const { body } = await request(url)
+    const img = await loadImage(await body.arrayBuffer())
+    
     ctx.drawImage(img, parseInt(x || 0), parseInt(y || 0), parseInt(width || img.width), parseInt(height || img.height))
     }
   }
