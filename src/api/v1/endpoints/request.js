@@ -6,9 +6,10 @@ module.exports = {
   async run (req, res) {
     try {
       let result = await axios(req.body);
-      res.json(result).status(200);
+      res.json(result.data).status(200);
     } catch (e) {
       res.json({ error: e }).status(500);
+      console.log(e);
     }
   }
 };
